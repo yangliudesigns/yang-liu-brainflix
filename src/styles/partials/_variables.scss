@@ -1,0 +1,31 @@
+
+
+//breakpoint
+$tablet-bp: 768px;
+$desktop-bp: 1280px;
+
+
+//heading & text padding
+$mo-h-tb: 1.5rem 0 1rem 0;  //mobile-heading-top & bottom
+$dt-h-tb: 2.25rem 0 1.5rem 0;  //desktop & tablet-heading-top & bottom
+
+$mo-p-b: 1rem;  //mobile-paragraph-bottom
+$dt-p-b: 2.25rem;  //desktop & tablet-paragraph-bottom
+
+
+//global padding
+$p-96: 6rem;
+$p-80: 5rem;
+$p-64: 4rem;
+$p-60: 3.75rem;
+$p-56: 3.5rem;
+$p-48: 3rem;
+$p-40: 2.5rem;
+$p-36: 2.25rem;
+$p-32: 2rem;
+$p-24: 1.5rem;  //padding between compoents - desktop & tablet
+$p-16: 1rem;    //padding between compoents - mobile
+$p-8: .5rem;
+$p-4: .25rem;
+
+

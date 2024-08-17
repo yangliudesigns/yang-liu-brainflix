@@ -1,0 +1,113 @@
+@use './colors' as *;
+
+
+
+//font sources
+@font-face {
+    font-family: 'AvenirNext';
+    src: url('../../assets/fonts/AvenirNextLTPro-Bold.woff2') format('woff2'),
+        url('../../assets/fonts/AvenirNextLTPro-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'AvenirNext';
+    src: url('../../assets/fonts/AvenirNextLTPro-Demi.woff2') format('woff2'),
+        url('../../assets/fonts/AvenirNextLTPro-Demi.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'AvenirNext';
+    src: url('../../assets/fonts/AvenirNextLTPro-Regular.woff2') format('woff2'),
+        url('../../assets/fonts/AvenirNextLTPro-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+//type base
+$family: 'AvenirNext', sans-serif;
+$regular: 400;
+$demi: 600;
+$bold: 700;
+
+//global font base
+body {
+    font-family: $family;
+    font-weight: $regular;
+    color: $primary-900;
+}
+
+// responsive text styles
+.heading-common { //mobile heading-page = heading-section
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: $bold;
+}
+
+.heading-page {
+        @extend .heading-common;
+
+    @include tablet {
+        font-size: 3.75rem;
+        line-height: 4.25rem;
+    }
+}
+
+.heading-section {
+    @extend .heading-common;
+
+    @include tablet {
+        font-size: 2.25rem;
+        line-height: 2.75rem;
+    }
+}
+
+.heading-sub {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-weight:$demi;
+
+    @include tablet {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+}
+
+.paragraph-body {
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+
+    @include tablet {
+        font-size: 0.875rem;
+        line-height: 1.375rem;
+    }
+}
+
+.paragraph-footer {
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+    color: $primary-100;
+
+    @include tablet {
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+    }
+}
+
+.paragraph-label,
+.paragraph-button {
+    font-size: 0.625rem;
+    line-height: 1.25rem;
+    font-weight:$bold;
+
+    @include tablet {
+        font-size: 0.75rem;
+        line-height: 1.25rem;
+    }
+}
