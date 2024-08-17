@@ -1,0 +1,18 @@
+
+
+
+
+//reset css
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+//BrainFlix logo - global size
+.brainflix-logo {
+    img {
+        max-width: 7.5rem; 
+        max-height: 1.5625rem;
+    } 
+}
