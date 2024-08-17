@@ -30,11 +30,13 @@
     font-display: swap;
 }
 
+
 //type base
 $family: 'AvenirNext', sans-serif;
 $regular: 400;
 $demi: 600;
 $bold: 700;
+
 
 //global font base
 body {
@@ -43,71 +45,67 @@ body {
     color: $primary-900;
 }
 
+
 // responsive text styles
-.heading-common { //mobile heading-page = heading-section
+.heading-page {
     font-size: 1.5rem;
     line-height: 2rem;
     font-weight: $bold;
-}
-
-.heading-page {
-        @extend .heading-common;
 
     @include tablet {
-        font-size: 3.75rem;
-        line-height: 4.25rem;
-    }
-}
-
-.heading-section {
-    @extend .heading-common;
-
-    @include tablet {
-        font-size: 2.25rem;
+        font-size: 2.0625rem;
         line-height: 2.75rem;
     }
 }
 
-.heading-sub {
-    font-size: 0.875rem;
+.heading-section {
+    font-size: .75rem;
+    line-height: 1.25rem;
+    font-weight: $bold;
+}
+
+
+
+
+
+.shared-mo {  // subheader = body (mobile)
+    font-size: .8125rem;
+    line-height: 1.125rem;
+}
+
+.shared-dt {  // subheader = body (desktop & tablet)
+    font-size: .875rem;
     line-height: 1.375rem;
-    font-weight:$demi;
+}
+
+.heading-subheader {
+    @extend .shared-mo;
+    font-weight:$bold;
 
     @include tablet {
-        font-size: 1.5rem;
-        line-height: 2rem;
+        @extend .shared-dt;
     }
 }
+
 
 .paragraph-body {
-    font-size: 0.8125rem;
-    line-height: 1.125rem;
+    @extend .shared-mo;
 
     @include tablet {
-        font-size: 0.875rem;
-        line-height: 1.375rem;
+        @extend .shared-dt;
     }
 }
 
-.paragraph-footer {
-    font-size: 0.8125rem;
-    line-height: 1.125rem;
-    color: $primary-100;
 
-    @include tablet {
-        font-size: 0.875rem;
-        line-height: 1.25rem;
-    }
-}
 
-.paragraph-label,
-.paragraph-button {
+
+.paragraph-labels,
+.paragraph-buttons {
     font-size: 0.625rem;
     line-height: 1.25rem;
     font-weight:$bold;
 
     @include tablet {
         font-size: 0.75rem;
-        line-height: 1.25rem;
     }
 }
