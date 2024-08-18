@@ -67,24 +67,19 @@ body {
 
 
 
-
-
 .shared-mo {  // subheader = body (mobile)
     font-size: .8125rem;
     line-height: 1.125rem;
 }
 
-.shared-dt {  // subheader = body (desktop & tablet)
-    font-size: .875rem;
-    line-height: 1.375rem;
-}
 
 .heading-subheader {
     @extend .shared-mo;
     font-weight:$bold;
 
     @include tablet {
-        @extend .shared-dt;
+        font-size: .875rem;
+        line-height: 1.375rem;
     }
 }
 
@@ -93,7 +88,8 @@ body {
     @extend .shared-mo;
 
     @include tablet {
-        @extend .shared-dt;
+        font-size: .875rem;
+        line-height: 1.375rem;
     }
 }
 

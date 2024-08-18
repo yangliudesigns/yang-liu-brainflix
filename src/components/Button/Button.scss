@@ -1,0 +1,27 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+
+.btn {
+    width: 100%;
+    height: auto;
+    color: $primary-100;
+    background-color: $primary-700;
+    border-radius: 4px;
+    @include flexcenter;
+
+    @include tablet {
+        max-width: 150px;
+    }
+
+    :hover {
+        background-color: $secondary-700;
+    }
+
+}
+
+.btn-icon {
+    color: $primary-100;
+    position: relative;
+    left:16px;
+}
