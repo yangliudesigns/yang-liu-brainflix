@@ -4,17 +4,19 @@
 
 .btn {
     width: 100%;
-    height: auto;
+    height: 44px;
     color: $primary-100;
     background-color: $primary-700;
+    border: none;
     border-radius: 4px;
+    cursor: pointer;
     @include flex-center;
 
     @include tablet {
         max-width: 150px;
     }
 
-    :hover {
+    &:hover {
         background-color: $secondary-700;
     }
 
@@ -22,6 +24,6 @@
 
 .btn-icon {
     color: $primary-100;
-    position: relative;
+    position: absolute;
     left:16px;
 }
