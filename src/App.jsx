@@ -1,5 +1,6 @@
 import Button from "./components/Button/Button"
 import commentIcon from "./assets/images/add_comment.svg"
+import SearchBar from "./components/SearchBar/SearchBar"
 
 
 export default function App() {
@@ -10,7 +11,7 @@ export default function App() {
 
 
     <Button type="submit" text="COMMENT" icon={commentIcon} />
-
+    <SearchBar />
 
 
 
