@@ -1,0 +1,26 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/resets" as *;
+
+
+.header {
+    margin: auto;
+    padding:1rem;
+
+    &__logo {
+        flex: 100%;
+        margin: 1rem 0;
+    }
+
+    &__search {
+        flex: 1;
+        margin: 1rem 0;
+    }
+
+    &__avatar {
+        margin: 1rem;
+    }
+
+    &__upload-botton {
+        margin: 1rem;
+    }
+}
