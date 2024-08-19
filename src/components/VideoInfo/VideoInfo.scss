@@ -4,3 +4,61 @@
 @use "../../styles/partials/typography" as *;
 @use "../../styles/partials/variables" as *;
 
+
+.video-info {
+    padding: 1rem;
+
+    @include tablet {
+        padding: 1.25rem;
+    }
+
+    @include desktop {
+        padding: 2rem;
+    }
+
+    &__title {
+        border-bottom: 1px solid $secondary-500;
+        padding-bottom: 1rem;
+
+        @include tablet {
+            padding: 0;
+            border: none;
+            padding-bottom: 0.5rem;
+        }
+    }
+
+    &__feedback {
+        padding: 1rem 0;
+        border-bottom: 1px solid $secondary-500;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+
+            @include tablet {
+                flex-direction: row;
+            }
+    
+                &__channel {
+                    padding-bottom: 0.5rem;
+                }
+        
+                &__timestamp {
+                    color: $secondary-500;
+                }
+
+                &__data {
+                    color: $secondary-500;
+    
+                    &__icon {
+                        padding-right: 1rem;
+                    }
+                }
+            }
+        
+            &__description {
+                padding: 1rem 0;
+            }
+        }
+
+

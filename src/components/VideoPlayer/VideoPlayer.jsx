@@ -14,13 +14,8 @@ export default function VideoPlayer({ vidSrc, posSrc }) {
       poster={posSrc} 
       controls 
       >
-
       </video>
-
-
-
-
-
+      
     </section>
   )
 }

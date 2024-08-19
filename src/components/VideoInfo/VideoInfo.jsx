@@ -1,50 +1,55 @@
 import "./VideoInfo.scss";
 import React from 'react'
+import viewsIcon from "../../assets/images/views.svg";
+import likesIcon from "../../assets/images/likes.svg";
 
 
 
 
-export default function VideoInfo({ 
-    title, 
-    name, 
-    time, 
-    likes, 
-    views, 
-    description}) {
-
+export default function VideoInfo({ video }) {
 
   return (
 
     <section className="video-info">
     
-        <h1 className="video-info__title heading-page">{title}</h1>
+        <h1 className="video-info__title heading-page">
+            {video.title}
+        </h1>
+        
+        <div className="video-info__feedback">
+            <div className="video-info__info-group">
+                <h5 className="video-info__channel heading-subheader">
+                    by {video.channel}
+                </h5>
+                <p className="video-info__timestamp paragraph-body">
+                {new Date(video.timestamp).toLocaleDateString()}
+                </p>
+            </div>
 
-        <div className="video-info__info-one">
-            <h5 className="video-info__name heading-subheader">
-            by {name}
-            </h5>
-            <p className="video-info__time paragraph-body">
-            {timestamp && <TimestampLabel timestamp={timestamp} />}
-            </p>
+            <div className="video-info__info-group">
+                <p className="video-info__data paragraph-body">
+                    <img 
+                    src={viewsIcon} 
+                    alt="views" 
+                    className="video-info__icon" 
+                    />
+                    {video.views}
+                </p>
+                <p className="video-info__data paragraph-body">
+                    <img 
+                    src={likesIcon} 
+                    alt="likes" 
+                    className="video-info__icon" 
+                    />
+                    {video.likes}
+                </p>          
+            </div>
         </div>
 
-        <div className="video-info__info-two">
-            <div className="video-info__feedback">
-                <img src="" alt="" className="video-info__icon" />
-                {views}
-            </div>
-            <div className="video-info__feedback">
-                <img src="" alt="" className="video-info__icon" />
-                {likes}
-            </div>
-            
-        </div>
-
-      
-
+        <p className="video-info__description paragraph-body">
+            {video.description}
+        </p>
 
     </section>
-
-
-  )
+    )
 }
