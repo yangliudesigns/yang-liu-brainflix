@@ -5,7 +5,13 @@
 @use "../../styles/partials/variables" as *;
 
 .comment-list {
-    
+    padding: 1rem;
+
+    @include desktop {
+        padding: 2rem 0 2rem 1rem;
+        flex-grow: 2;
+      }
+
     &__list {
         list-style-type: none;
     }
