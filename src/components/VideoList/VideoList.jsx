@@ -1,6 +1,6 @@
 import React from 'react'
 import "./VideoList.scss";
-
+import VideoCard from "../VideoCard/VideoCard";
 
 export default function VideoList({vids, currentVideo, changeVideo}) {
   return (
@@ -16,7 +16,7 @@ export default function VideoList({vids, currentVideo, changeVideo}) {
         {vids.filter(video => video.id !== currentVideo.id)
         .map(video => {
             return(
-                <video
+                <VideoCard
                 key={video.id}
                 id={video.id}
                 title={video.title}

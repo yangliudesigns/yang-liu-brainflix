@@ -2,7 +2,6 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/resets" as *;
 
-
 .avatar {
     background-color: $secondary-500;
     color: transparent;
@@ -18,7 +17,6 @@
         width: 2.5rem;
         height: 2.5rem;
     }
-
 
     &::after {
         content: " ";

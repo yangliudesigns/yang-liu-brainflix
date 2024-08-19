@@ -2,8 +2,6 @@ import "./VideoPlayer.scss";
 import React from 'react'
 
 
-
-
 export default function VideoPlayer({ vidSrc, posSrc }) {
   return (
     <section className="video-player">
