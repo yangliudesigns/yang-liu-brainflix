@@ -1,0 +1,54 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/resets" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+
+
+.comment-card {
+    padding: 0.75rem 0;
+    border-top: 1px solid $seconard-500;
+    display: flex;
+    align-items:flex-start ;
+
+    @include tablet {
+        padding: 1.5rem 0;
+    }
+
+    @include desktop {
+        padding: 0 0 1rem 1.5rem;
+    }
+
+    &__avatar-container {
+        padding-right: 1rem;
+
+        @include tablet {
+            padding-right: 1.25rem;
+        }
+
+        @include desktop {
+            padding-right: 2.25rem;
+        }
+    }
+
+    &__content-container {
+        display: flex;
+        flex-wrap: wrap;
+        flex-grow: 1;
+    }
+
+    &__name {
+        flex: 1;
+        height: 1em;
+        white-space: nowrap;
+        margin-bottom: 1rem;
+
+        @include tablet {
+            margin-bottom: 0.75rem;
+        }
+    }
+
+    &__text {
+        width: 100%;
+    }
+}
