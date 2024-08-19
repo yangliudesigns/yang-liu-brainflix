@@ -12,7 +12,7 @@ export default function App() {
       <Header />
 
     <Button type="submit" text="COMMENT" icon={commentIcon} />
-    <SearchBar />
+    {/* <SearchBar /> */}
 {/* 
     <Avatar />
     <Avatar imgSrc={imgSrc}/> */}

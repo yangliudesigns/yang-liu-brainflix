@@ -6,6 +6,7 @@ import Avatar from "../Avatar/Avatar";
 import SearchBar from "../SearchBar/SearchBar";
 import SiteLogo from "../../assets/images/BrainFlix-logo.svg";
 import uploadIcon from "../../assets/images/upload.svg";
+import imgSrc from "../../assets/images/Mohan-muruge.jpg";
 
 
 export default function Header() {
@@ -13,29 +14,33 @@ export default function Header() {
 
     <header className="header">
 
-      <div className="header__logo">
-        <img 
-        className="logo" 
-        src={SiteLogo} 
-        alt="This is logo"  
-        />
-      </div>
-      
-      <div className="header__search">
-        <SearchBar />
-      </div>
-      
-      <div className="header__upload-button">
-        <Button 
-        text="UPLOAD"
-        icon={uploadIcon}
-        />
-      </div>
+      <div className="header__container">
 
-      <div className="header__avatar">
-        <Avatar imgSrc={imgSrc}/>
-      </div>
+        <div className="header__logo">
+          <img 
+          className="logo" 
+          src={SiteLogo} 
+          alt="This is logo"  
+          />
+        </div>
+        
+        <div className="header__search">
+          <SearchBar />
+        </div>
+        
+        <div className="header__avatar">
+          <Avatar imgSrc={imgSrc}/>
+        </div>
 
+        <div className="header__upload-button">
+          <Button 
+          text="UPLOAD"
+          icon={uploadIcon}
+          />
+        </div>
+
+
+      </div>
 
     </header>
   )

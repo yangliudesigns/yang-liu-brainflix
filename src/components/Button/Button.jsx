@@ -6,7 +6,7 @@ export default function Button({ type, text, icon }) {
   return (
     <div>
       <button className="btn paragraph-buttons">
-      {icon && <img className="btn-icon" src={icon} alt="icon" />}
+      {icon && <img className="btn__icon" src={icon} alt="icon" />}
       {text}
       </button>
     </div>
