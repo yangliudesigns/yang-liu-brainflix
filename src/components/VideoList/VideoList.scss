@@ -5,3 +5,26 @@
 @use "../../styles/partials/variables" as *;
 
 
+.video-list {
+    padding: 1rem;
+
+    @include tablet {
+        padding: 1.5rem;
+    }
+
+    @include desktop {
+        padding: 2rem;
+        border-left: 1px solid $secondary-500;
+    }
+
+    &__header {
+        color: $primary-500;
+        padding-bottom: 1rem;
+    }
+
+    &__listing {
+        padding-bottom: 1rem; 
+    }
+
+}
+
