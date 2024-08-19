@@ -17,7 +17,6 @@ export default function CommentList({ comments }) {
           >
 
             <CommentCard
-              avatar={comment.avatar}
               name={comment.name}
               timestamp={comment.timestamp}
               comment={comment.comment}

@@ -1,5 +1,6 @@
 import React from 'react'
 import "./CommentCard.scss";
+import Avatar from "../Avatar/Avatar";
 
 
 export default function CommentCard({ name, comment, timestamp }) {
@@ -17,7 +18,7 @@ export default function CommentCard({ name, comment, timestamp }) {
             </h5>
 
             <p className="comment-card__timestamp paragraph-body">
-                {new Date(video.timestamp).toLocaleDateString()}
+                {new Date(timestamp).toLocaleDateString()}
             </p>
         
             <p className="comment-card__text paragraph-body">

@@ -12,7 +12,7 @@ export default function VideoCard({
 
   return (
 
-        <div className="video-card">
+        <div className="video-card" key={id}>
 
             <a 
             className="video-card__item"
