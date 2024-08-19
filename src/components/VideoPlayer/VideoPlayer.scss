@@ -1,0 +1,19 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/resets" as *;
+
+
+.video-player {
+    @include flex-center;
+    background-color: $secondary-900;
+
+    @include tablet {
+        padding: 0 3rem;
+    }
+
+    &__video {
+        width: 100%;
+        max-width: 1124px;
+        aspect-ratio: 16/9;
+    }
+}
