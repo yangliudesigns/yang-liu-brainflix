@@ -1,21 +1,21 @@
+import React from 'react';
 import "./VideoPlayer.scss";
-import React from 'react'
- 
 
-export default function VideoPlayer({ vidSrc, posSrc }) {
 
-  
+export default function VideoPlayer({ videoSrc, posterSrc }) {
   return (
     <section className="video-player">
-      
-      <video 
-      className="video-player__video" 
-      src={vidSrc} 
-      poster={posSrc} 
-      controls 
-      >
-      </video>
-      
+      {videoSrc ? (
+        <video 
+          className="video-player__video" 
+          src={videoSrc} 
+          poster={posterSrc || ''} 
+          controls 
+        />
+      ) : (
+        <div>Loading video...</div>
+      )}
     </section>
-  )
+  );
 }
+

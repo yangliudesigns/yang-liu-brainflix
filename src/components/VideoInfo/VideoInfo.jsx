@@ -14,28 +14,29 @@ export default function VideoInfo({
     likes,
     timestamp,
     onLike,
-  }) {
+    }) {
+
     title ??= "Loading...";
     channel ??= "Loading...";
     description ??= "Loading...";
     views ??= 0;
     likes ??= 0;
 
-  return (
+    return (
 
     <section className="video-info">
     
         <h1 className="video-info__title heading-page">
-            {video.title}
+            {title}
         </h1>
         
         <div className="video-info__feedback">
             <div className="video-info__info-group">
                 <h5 className="video-info__channel heading-subheader">
-                    by {video.channel}
+                    by {channel}
                 </h5>
                 <p className="video-info__timestamp paragraph-body">
-                {new Date(video.timestamp).toLocaleDateString()}
+                {new Date(timestamp).toLocaleDateString()}
                 </p>
             </div>
 
@@ -46,7 +47,7 @@ export default function VideoInfo({
                     alt="views" 
                     className="video-info__icon" 
                     />
-                    {video.views}
+                    {views}
                 </p>
                 <p className="video-info__data paragraph-body">
                     <img 
@@ -54,13 +55,13 @@ export default function VideoInfo({
                     alt="likes" 
                     className="video-info__icon" 
                     />
-                    {video.likes}
+                    {likes}
                 </p>          
             </div>
         </div>
 
         <p className="video-info__description paragraph-body">
-            {video.description}
+            {description}
         </p>
 
     </section>

@@ -1,96 +1,31 @@
-import React from 'react'
+import React from 'react';
 import './Button.scss';
 import { Link } from "react-router-dom";
 
-
-export default function Button({ 
-  text, 
-  icon,
-  href, 
-  onClick, btnStyle: style =  "primary", 
-  disabled = false}) {
-
+export default function Button({ text, icon, href, onClick, btnStyle = "primary", disabled = false }) {
     const content = (
-      <>
-        {icon && (
-          <img className="button__icon" src={icon} />
-        )}
-        {text}
-      </>
+        <>
+            {icon && (
+                <img className="button__icon" src={icon} alt="button icon" />
+            )}
+            {text}
+        </>
     );
 
-    const className = `button ${
-      style === "primary" ? "button--primary" : "button--secondary"
-    }`;
-
+    const className = `button ${btnStyle === "primary" ? "button--primary" : "button--secondary"}`;
 
     return href ? (
-
-      <Link to={href} className={className}>
-        {content}
-      </Link>
-
+        <Link to={href} className={className} onClick={onClick}>
+            {content}
+        </Link>
     ) : (
-
-      <button
-        className={className}
-        type={onClick ? "button" : "default"}
-        onClick={onClick}
-        disabled={disabled}
-      >
-      {content}
-    </button>
-
+        <button
+            className={className}
+            type="button"
+            onClick={onClick}
+            disabled={disabled}
+        >
+            {content}
+        </button>
     );
-  }
-
-
-
-//   <div>
-//   <button className="btn paragraph-buttons">
-//   {icon && <img className="btn__icon" src={icon} alt="icon" />}
-//   {text}
-//   </button>
-// </div>
-
-
-// export default function Button({type, text, icon }) {
-//   return (
-//     <button type={type} className="btn">
-//       <img className="btn-icon" src={icon} alt="icon" />
-//       {text}
-//     </button>
-//   );
-// }
-
-// //navigation
-// import React from 'react';
-// import Button from '../Button/Button';
-// import uploadIcon from '../../assets/images/upload-icon.svg'; 
-
-// function Navigation() {
-//   return (
-//     <nav className="navigation">
-//         <a href="#">
-//             <Button text="UPLOAD" icon={uploadIcon} />
-//         </a>
-//     </nav>
-//   );
-// }
-
-// export default Navigation;
-
-// //comment section
-// import React from 'react';
-// import Button from '../Button/Button';
-// import commentIcon from '../../assets/images/comment-icon.svg'; 
-
-// function Comment() {
-//     return (
-//       <nav className="comment">
-//         <Button type="submit" text="COMMENT" icon={commentIcon} />
-//       </nav>
-//     );
-//   }
-  
-//   export default Comment;
+}
