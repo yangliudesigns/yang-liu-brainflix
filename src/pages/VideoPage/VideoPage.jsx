@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 import VideoInfo from "../../components/VideoInfo/VideoInfo";
 import VideoList from "../../components/VideoList/VideoList";
-import CommentSection from "../../components/CommentsSection/CommentsSection";
+import CommentSection from "../../components/CommentSection/CommentSection";
 
 
 const API_URL = "https://unit-3-project-api-0a5620414506.herokuapp.com";
@@ -41,7 +41,9 @@ export default function VideoPage() {
     
     useEffect(() => {
 
-        const videoId = videoIdParam || sideVideos[0]?.id;
+        if (!sideVideos) return;
+        
+        const videoId = videoIdParam ||  (sideVideos.length > 0 && sideVideos[0]?.id);
 
         if (!videoId) return;
 

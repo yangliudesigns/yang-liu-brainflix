@@ -20,7 +20,8 @@ export default function CommentSection({ comments, videoId, onCommented }) {
         };
 
         fetch(
-            `https://unit-3-project-api-0a5620414506.herokuapp.com/videos/${videoId}/comments?api_key="3997877e-6e9c-4457-a46b-b1eb77309298"`, {
+            `https://unit-3-project-api-0a5620414506.herokuapp.com/videos/${videoId}/comments?api_key=3997877e-6e9c-4457-a46b-b1eb77309298`, 
+            {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
