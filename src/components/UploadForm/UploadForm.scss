@@ -1,0 +1,126 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/resets" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+
+
+
+.upload-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+
+    @include tablet {
+        border-top: 1px solid $secondary-500;
+        padding-top: 1.5rem;
+    }
+
+    &__thumbnail-one {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 20rem;
+    }
+
+    &__fields-one {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        @include desktop {
+            flex: 42rem;
+        }
+    }
+
+    &__buttons-one {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        gap: 1.5rem;
+        margin-top: 0.25rem;
+
+        @include tablet {
+            flex-direction: row-reverse;
+            border-top: 1px solid $secondary-500;
+            padding: 1.5rem 0;
+
+        }
+
+        @include desktop {
+            margin-top: 0.5rem;
+        }
+    }
+
+    &__button-container {
+        @include tablet {
+            width: 9.5rem;
+        }
+        @include desktop {
+            width: 9rem;
+        }
+    }
+
+    &__label {
+        color: $primary-500;
+        position: relative;
+        cursor: pointer;
+    }
+
+    &__thumbnail {
+        display: block;
+        object-fit: cover;
+        width: 100%;
+        height: 10rem;
+        border-radius: 4px;
+
+        @include tablet {
+            height: 12rem;
+        }
+
+        @include desktop {
+            height: 10rem;
+        }
+    }
+
+    &__field {
+        background-color: $primary-100;
+        border: 1px solid $secondary-500;
+        border-radius: 4px;
+        padding: 0.75rem;
+
+            @include tablet {
+                padding-left: 1rem;
+                margin-bottom: auto;
+            }
+        }
+
+        &--textarea {
+            padding: 0.75rem;
+            height: 5.5rem;
+            resize: none;
+
+            @include tablet {
+                padding-left: 1rem;
+            }
+        }
+    }
+
+    &__file-input {
+        color: $primary-100;
+        opacity: 0.5;
+        width: 100%;
+        padding: 1rem;
+        border-radius: 4px;
+        position: absolute;
+        bottom: 0;
+        left: 0rem;
+        transition: all 0.3s ease-out;
+        cursor: pointer;
+
+        &:hover,
+        *:hover > & {
+            opacity: 1;
+        }
+    }
