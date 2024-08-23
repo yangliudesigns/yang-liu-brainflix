@@ -1,11 +1,7 @@
 import Header from './components/Header/Header';
-import VideoPlayer from './components/VideoPlayer/VideoPlayer';
-import VideoInfo from './components/VideoInfo/VideoInfo';
-import infodata from './data/video-details.json';
-import React, { useState } from 'react';
-import VideoList from './components/VideoList/VideoList';
-import CommentForm from './components/CommentForm/CommentForm';
-import CommentList from './components/CommentList/CommentList';
+import VideoPage from "./pages/VideoPage/VideoPage";
+import UploadPage from "./pages/UploadPage/UploadPage";
+
 import './App.scss';
 
 export default function App() {
