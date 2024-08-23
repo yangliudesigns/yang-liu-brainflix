@@ -5,8 +5,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 import VideoInfo from "../../components/VideoInfo/VideoInfo";
-// import NextVideos from "../../components/NextVideos/NextVideos";
-// import CommentsSection from "../../components/CommentsSection/CommentsSection";
+import NextVideos from "../../components/NextVideos/NextVideos";
+import CommentsSection from "../../components/CommentsSection/CommentsSection";
 
 
 const API_URL = "https://unit-3-project-api-0a5620414506.herokuapp.com";
