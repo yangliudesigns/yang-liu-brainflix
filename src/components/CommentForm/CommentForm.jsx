@@ -7,13 +7,27 @@ import imgSrc from "../../assets/images/Mohan-muruge.jpg";
 
 
 
-
 export default function CommentForm({ onComment }) {
 
-
-
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const comment = event.target.comment.value;
     
-  return (
+
+        if (comment.length === 0) {
+            event.target.comment.classList.add("comment-form__commentbox--invalid");
+            return;
+        }
+    
+
+        event.target.comment.classList.remove("comment-form__commentbox--invalid");
+        onComment(comment);
+        event.target.reset();
+        };
+    
+
+
+    return (
 
     <div className="comment-form">
 

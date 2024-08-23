@@ -6,7 +6,20 @@ import likesIcon from "../../assets/images/likes.svg";
 
 
 
-export default function VideoInfo({ video }) {
+export default function VideoInfo({
+    title,
+    channel,
+    description,
+    views,
+    likes,
+    timestamp,
+    onLike,
+  }) {
+    title ??= "Loading...";
+    channel ??= "Loading...";
+    description ??= "Loading...";
+    views ??= 0;
+    likes ??= 0;
 
   return (
 

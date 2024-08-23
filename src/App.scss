@@ -5,25 +5,3 @@
 @use "./styles/partials/variables" as *;
 
 
-
-.app {
-
-    .content {
-        display: flex;
-        flex-direction: column;
-    
-        @include desktop {
-            flex-direction: row; 
-        }
-
-        .main-content {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .side-content {
-            // margin-left: auto;
-            max-width: 350px;
-        }
-    }
-}
