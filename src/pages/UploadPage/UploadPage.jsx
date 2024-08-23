@@ -7,9 +7,6 @@ import { useNavigate } from "react-router-dom";
 
 
 
-
-
-
 export default function UploadPage() {
 
     const navigate = useNavigate();
@@ -31,7 +28,6 @@ export default function UploadPage() {
         };
         
         const handleCancel = () => navigate("/");
-
 
 
 
