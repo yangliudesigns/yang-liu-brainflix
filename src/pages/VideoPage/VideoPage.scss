@@ -1,0 +1,76 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/resets" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+
+
+.video-page {
+    padding-top: 0.25rem;
+
+    @include tablet {
+        padding-top: 0;
+    }
+
+    &__status-message {
+        text-align: center;
+        margin: 20vh auto 0;
+    }
+}
+
+.bottom-section {
+    padding: 0 1rem 1rem;
+
+    @include tablet {
+        padding: 0 2.25rem 1.25rem 2.25rem;
+    }
+
+    @include desktop {
+        padding-bottom: 0;
+    }
+
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 64rem;
+        margin: auto;
+
+        @include desktop {
+            flex-wrap: nowrap;
+        }
+    }
+
+    &__video-details-container {
+        padding-top: 1rem;
+        width: 100%;
+
+        @include tablet {
+            padding-top: 1.5rem;
+        }
+
+        @include desktop {
+            max-width: 70%;
+            border-radius: 4px;
+            padding-top: 2rem;
+            padding-bottom: 4rem;
+        }
+    }
+
+    &__video-list-container {
+        padding-top: 1rem;
+        border-radius: 4px;
+        width: 100%;
+
+        @include tablet {
+            padding-top: 1.5rem;
+        }
+
+        @include desktop {
+            border: none;
+            padding-top: 2rem;
+            padding-bottom: 4rem;
+            padding-left: 1.25rem;
+            width: auto;
+        }
+    }
+}

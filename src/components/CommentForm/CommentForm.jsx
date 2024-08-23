@@ -8,7 +8,11 @@ import imgSrc from "../../assets/images/Mohan-muruge.jpg";
 
 
 
-export default function CommentForm() {
+export default function CommentForm({ onComment }) {
+
+
+
+    
   return (
 
     <div className="comment-form">

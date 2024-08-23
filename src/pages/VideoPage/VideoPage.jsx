@@ -5,8 +5,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 import VideoInfo from "../../components/VideoInfo/VideoInfo";
-import NextVideos from "../../components/NextVideos/NextVideos";
-import CommentsSection from "../../components/CommentsSection/CommentsSection";
+import VideoList from "../../components/VideoList/VideoList";
+import CommentSection from "../../components/CommentsSection/CommentsSection";
 
 
 const API_URL = "https://unit-3-project-api-0a5620414506.herokuapp.com";
@@ -17,7 +17,7 @@ const API_KEY = "3997877e-6e9c-4457-a46b-b1eb77309298";
 export default function VideoPage() {
 
     const { id: videoIdParam } = useParams();
-    const [sideVideos, setSideVideos] = useState([]);
+    const [sideVideos, setSideVideos] = useState(null);
     const [currentVideo, setCurrentVideo] = useState(null);
     const [error, setError] = useState(null);
 
@@ -25,32 +25,44 @@ export default function VideoPage() {
     useEffect(() => {
         axios.get(`${API_URL}/videos?api_key=${API_KEY}`)
             .then(response => {
-            setSideVideos(response.data);
+                if (response.status === 200) {
+                    setSideVideos(response.data);
+                } else {
+                    setError("Failed to load videos");
+                }
             })
             .catch(error => {
-            console.error(error);
-            setError("Failed to load videos");
+                console.error(error);
+                setError("Failed to load videos");
             });
-        }, []);
+    }, []);
         
     
     
     useEffect(() => {
 
+        const videoId = videoIdParam || sideVideos[0]?.id;
+
+        if (!videoId) return;
+
     setError(null);
     setCurrentVideo(null);
 
-    if (videoId) {
-        axios.get(`${API_URL}/videos/${videoId}?api_key=${API_KEY}`)
-            .then(response => {
+    axios.get(`${API_URL}/videos/${videoId}?api_key=${API_KEY}`)
+    .then(response => {
+        if (response.status === 200) {
             setCurrentVideo(response.data);
-            })
-            .catch(error => {
-            console.error(error);
+        } else {
             setError("This video isn't available");
-            });
         }
-    }, [videoIdParam, sideVideos]);
+    })
+    .catch(error => {
+        console.error(error);
+        setError("This video isn't available");
+    });
+
+    window.scrollTo({ behavior: "smooth", top: 0 });
+}, [videoIdParam, sideVideos]);
 
 
     document.title = `BrainFlix: ${currentVideo?.title ?? error ?? "Loading..."}`;
@@ -65,7 +77,6 @@ export default function VideoPage() {
 
         const handleLike = () => {
             const videoId = videoIdParam || sideVideos[0]?.id;
-            // assume there is one like,if no, ignore this
             axios.put(`${API_URL}/videos/${videoId}/likes?api_key=${API_KEY}`)
                 .then(response => setCurrentVideo(response.data));
             };
@@ -101,7 +112,7 @@ export default function VideoPage() {
                         onLike={handleLike}
                         />
                         {currentVideo !== null && (
-                        <CommentsSection
+                        <CommentSection
                             comments={currentVideo.comments}
                             videoId={videoId}
                             onCommented={handleCommented}
@@ -109,8 +120,8 @@ export default function VideoPage() {
                         )}
                     </div>
 
-                    <div className="bottom-section__next-videos-container">
-                        <NextVideos 
+                    <div className="bottom-section__video-list-container">
+                        <VideoList
                         videos={sideVideos} 
                         currentId={videoId} 
                         />
