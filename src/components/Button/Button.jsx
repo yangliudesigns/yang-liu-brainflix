@@ -1,21 +1,57 @@
 import React from 'react'
 import './Button.scss';
+import { Link } from "react-router-dom";
 
 
-export default function Button({ type, text, icon }) {
-  return (
-    <div>
-      <button className="btn paragraph-buttons">
-      {icon && <img className="btn__icon" src={icon} alt="icon" />}
-      {text}
-      </button>
-    </div>
-  )
-}
+export default function Button({ 
+  text, 
+  icon,
+  href, 
+  onClick, btnStyle: style =  "primary", 
+  disabled = false}) {
+
+    const content = (
+      <>
+        {icon && (
+          <img className="button__icon" src={icon} />
+        )}
+        {text}
+      </>
+    );
+
+    const className = `button ${
+      style === "primary" ? "button--primary" : "button--secondary"
+    }`;
+
+
+    return href ? (
+
+      <Link to={href} className={className}>
+        {content}
+      </Link>
+
+    ) : (
+
+      <button
+        className={className}
+        type={onClick ? "button" : "default"}
+        onClick={onClick}
+        disabled={disabled}
+      >
+      {content}
+    </button>
+
+    );
+  }
 
 
 
-
+//   <div>
+//   <button className="btn paragraph-buttons">
+//   {icon && <img className="btn__icon" src={icon} alt="icon" />}
+//   {text}
+//   </button>
+// </div>
 
 
 // export default function Button({type, text, icon }) {

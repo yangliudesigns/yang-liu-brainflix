@@ -31,5 +31,27 @@
         margin: auto;
     }
 
+    &--primary {
+        color: $primary-100;
+        background-color: $primary-700;
+
+        &:hover {
+            background-color: $secondary-700;
+        }
+
+        &:disabled {
+            background-color: $primary-500;
+            cursor: default;
+        }
+    }
+    &--secondary {
+        color: $primary-700;
+        background-color: $primary-100;
+
+        &:hover {
+            background-color: $secondary-500;
+        }
+    }
+
 }
 
