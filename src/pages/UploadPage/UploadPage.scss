@@ -1,0 +1,50 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/resets" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+
+
+.upload-page {
+    padding: 0 1rem 1rem;
+    border-top: 4px;
+
+    @include tablet {
+        padding: 0 2.25rem 1.25rem 2.25rem;
+    }
+
+    &__content {
+        margin: auto;
+        max-width: 64rem;
+
+        @include desktop {
+            flex-wrap: nowrap;
+        }
+    }
+
+    &__title {
+        margin: 1.5rem 0 1rem;
+
+        @include tablet {
+            margin: 2.25rem 0 1.375rem;
+        }
+    }
+
+    &__success-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    &__success-image {
+        border-radius: 4px;
+        width: 100%;
+        max-width: 20rem;
+    }
+
+    &__success-message {
+        margin: 2rem;
+    }
+}
