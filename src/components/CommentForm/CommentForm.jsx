@@ -41,7 +41,7 @@ export default function CommentForm({ onComment }) {
                     JOIN THE CONVERSATION
 
                     <textarea
-                        className="comment-form__commentbox"
+                        className="comment-form__commentbox paragraph-body"
                         id="commentBox"
                         name="comment"
                         placeholder="Add a new comment"

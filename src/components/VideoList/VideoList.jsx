@@ -7,7 +7,9 @@ export default function VideoList({ videos, currentId }) {
 
     return (
         <aside className="video-list">
+
             <h5 className="video-list__title heading-section">NEXT VIDEOS</h5>
+            
             <ul className="video-list__listing">
                 {videoList.map((video) => (
                     <li key={video.id}>
@@ -20,6 +22,7 @@ export default function VideoList({ videos, currentId }) {
                     </li>
                 ))}
             </ul>
+            
         </aside>
     );
 }

@@ -13,7 +13,7 @@ export default function VideoInfo({
     views,
     likes,
     timestamp,
-    onLike,
+    // onLike,
     }) {
 
     title ??= "Loading...";

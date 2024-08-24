@@ -13,6 +13,7 @@
     border-radius: 4px;
     cursor: pointer;
     @include flex-center;
+    text-decoration: none;
 
     @include tablet {
         max-width: 200px;

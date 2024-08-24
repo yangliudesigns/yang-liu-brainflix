@@ -5,25 +5,104 @@
 @use "../../styles/partials/variables" as *;
 
 
+// .video-info {
+//     padding-bottom: 1rem;
+
+//     @include tablet {
+//         padding-bottom: 1.5rem;
+//     }
+
+//     @include desktop {
+//         padding-bottom: 2rem;
+//     }
+
+//     &__title {
+//         border-bottom: 1px solid $secondary-500;
+//         padding-bottom: 1rem;
+
+//         @include tablet {
+//             padding: 0;
+//             border: none;
+//             padding-bottom: 0.5rem;
+//         }
+//     }
+
+//     &__feedback {
+//         padding: 1rem 0;
+//         border-bottom: 1px solid $secondary-500;
+//         display: flex;
+//         flex-direction: row; 
+//         justify-content: space-between;
+
+
+//             @include tablet {
+//                 flex-direction: row;
+//             }
+
+//             &__info-group {
+//                 display: flex;
+//                 flex-direction: column;
+//                 justify-content: center;
+        
+//                 @include tablet {
+//                     flex-direction: row;
+//                     align-items: center;
+//                 }
+//             }
+
+//             &__channel {
+//                 padding-bottom: 0.5rem;
+
+//                 @include tablet {
+//                     padding-bottom: 0;
+//                     padding-right: 2rem;
+//                 }
+//             }
+        
+//             &__timestamp {
+//                 color: $secondary-500;
+
+//                 @include tablet {
+//                     padding-right: 2rem;
+//                 }
+//             }
+
+//             &__data {
+//                 color: $secondary-500;
+//                 display: flex;
+//                 align-items: center;
+    
+//                 &__icon {
+//                     padding-right: 0.5rem;
+//                 }
+//             }
+//         }
+        
+//             &__description {
+//                 padding: 1rem 0;
+//             }
+//         }
+
+
 .video-info {
-    padding: 1rem;
+    padding-bottom: 1rem;
 
     @include tablet {
-        padding: 1.25rem;
+        padding-bottom: 1.5rem;
     }
 
     @include desktop {
-        padding: 2rem;
+        padding-bottom: 2rem;
     }
 
     &__title {
-        border-bottom: 1px solid $secondary-500;
+        padding-top: 1.5rem;
         padding-bottom: 1rem;
+        border-bottom: 1px solid $secondary-500;
 
         @include tablet {
-            padding: 0;
-            border: none;
             padding-bottom: 0.5rem;
+            border-bottom: none;
         }
     }
 
@@ -31,34 +110,68 @@
         padding: 1rem 0;
         border-bottom: 1px solid $secondary-500;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: space-between;
 
+        @include tablet {
+            flex-direction: row;
+        }
+    }
 
-            @include tablet {
-                flex-direction: row;
-            }
-    
-                &__channel {
-                    padding-bottom: 0.5rem;
-                }
-        
-                &__timestamp {
-                    color: $secondary-500;
-                }
+    &__info-group {
+        display: flex;
+        flex-direction: column;
 
-                &__data {
-                    color: $secondary-500;
-    
-                    &__icon {
-                        padding-right: 1rem;
-                    }
-                }
-            }
-        
-            &__description {
-                padding: 1rem 0;
-            }
+        @include tablet {
+            flex-direction: row;
+            align-items: center;
+            // justify-content: space-between;
+            gap: 2rem;
+        }
+    }
+
+    &__channel {
+        padding-bottom: 0.5rem;
+        color: $primary-900;
+
+        @include tablet {
+            padding-right: 2rem;
+            padding-bottom: 0;
+        }
+    }
+
+    &__timestamp {
+        color: $primary-500;
+    }
+
+    &__data {
+        display: flex;
+        align-items: center;
+        color: $primary-500;
+        margin-bottom: 0.5rem;
+
+        @include tablet {
+            margin-bottom: 0;
         }
 
+        &__icon {
+            margin-right: 0.5rem;
 
+            @include tablet {
+                margin-right: 0.5rem;
+            }
+        }
+    }
+
+    &__description {
+        padding: 1rem 0;
+
+        @include tablet {
+            padding-top: 1.5rem;
+        }
+
+        @include desktop {
+            padding-right: 1.5rem;
+        }
+    }
+}
