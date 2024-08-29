@@ -1,22 +1,18 @@
 import axios from 'axios';
 
-const config = {
-    apiKey: "3997877e-6e9c-4457-a46b-b1eb77309298",
-    endpoint: "http://localhost:8080/",
-};
-
 const api = axios.create({
-    baseURL: config.endpoint,
+    baseURL: process.env.REACT_APP_API_BASE_URL,
 });
 
 // 在所有请求中自动附加 API 密钥
 api.interceptors.request.use((request) => {
     request.params = request.params || {};
-    request.params.api_key = config.apiKey;
+    request.params.api_key = process.env.REACT_APP_API_KEY;
     return request;
 });
 
 export default api;
+
 
 
 
