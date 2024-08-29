@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import "./VideoPage.scss";
-import axios from 'axios';
 import { useParams } from "react-router-dom";
+import "./VideoPage.scss";
 import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 import VideoInfo from "../../components/VideoInfo/VideoInfo";
 import VideoList from "../../components/VideoList/VideoList";
 import CommentSection from "../../components/CommentSection/CommentSection";
-
-const API_URL = "https://unit-3-project-api-0a5620414506.herokuapp.com";
-const API_KEY = "3997877e-6e9c-4457-a46b-b1eb77309298";
+import api from '../../usecase';
 
 export default function VideoPage() {
     const { id: videoIdParam } = useParams();
@@ -17,7 +14,7 @@ export default function VideoPage() {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        axios.get(`${API_URL}/videos?api_key=${API_KEY}`)
+        api.get("/videos")
             .then(response => {
                 if (response.status === 200) {
                     setSideVideos(response.data);
@@ -44,7 +41,7 @@ export default function VideoPage() {
         setError(null);
         setCurrentVideo(null);
 
-        axios.get(`${API_URL}/videos/${videoId}?api_key=${API_KEY}`)
+        api.get(`/videos/${videoId}`)
             .then(response => {
                 if (response.status === 200) {
                     setCurrentVideo(response.data);
@@ -64,13 +61,13 @@ export default function VideoPage() {
 
     const handleCommented = () => {
         const videoId = videoIdParam || sideVideos[0]?.id;
-        axios.get(`${API_URL}/videos/${videoId}?api_key=${API_KEY}`)
+        api.get(`/videos/${videoId}`)
             .then(response => setCurrentVideo(response.data));
     };
 
     const handleLike = () => {
         const videoId = videoIdParam || sideVideos[0]?.id;
-        axios.put(`${API_URL}/videos/${videoId}/likes?api_key=${API_KEY}`)
+        api.put(`/videos/${videoId}/likes`)
             .then(response => setCurrentVideo(response.data));
     };
 
