@@ -7,6 +7,8 @@ import VideoList from "../../components/VideoList/VideoList";
 import CommentSection from "../../components/CommentSection/CommentSection";
 import api from '../../usecase';
 
+
+
 export default function VideoPage() {
     const { id: videoIdParam } = useParams();
     const [sideVideos, setSideVideos] = useState([]);
