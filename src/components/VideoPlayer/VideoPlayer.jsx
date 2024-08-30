@@ -10,7 +10,7 @@ export default function VideoPlayer({ videoSrc, posterSrc }) {
           className="video-player__video" 
           src={videoSrc} 
           poster={posterSrc || ''} 
-          controls 
+          controls
         />
       ) : (
         <div>Loading video...</div>

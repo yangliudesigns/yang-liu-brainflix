@@ -1,17 +1,18 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: process.env.REACT_APP_API_BASE_URL,
+    baseURL: import.meta.env.VITE_API_BASE_URL, 
 });
 
-// 在所有请求中自动附加 API 密钥
 api.interceptors.request.use((request) => {
     request.params = request.params || {};
-    request.params.api_key = process.env.REACT_APP_API_KEY;
+    request.params.api_key = "3997877e-6e9c-4457-a46b-b1eb77309298"; 
     return request;
 });
 
 export default api;
+
+
 
 
 

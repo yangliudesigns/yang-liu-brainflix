@@ -13,7 +13,6 @@ export default function UploadForm({ onUpload, onCancel }) {
         thumbnailUrl: videoImage, // 保持这个作为展示用的默认图片
     });
 
-    // 不再使用 blob URL，保持展示用的缩略图逻辑
     useEffect(() => {
         if (!formValues.thumbnailFile) {
             setFormValues((formValues) => ({
@@ -29,7 +28,6 @@ export default function UploadForm({ onUpload, onCancel }) {
         return () => URL.revokeObjectURL(objectUrl);
     }, [formValues.thumbnailFile]);
 
-    // Submit handler 
     const handleSubmit = (event) => {
         event.preventDefault();
 
@@ -38,7 +36,15 @@ export default function UploadForm({ onUpload, onCancel }) {
             return;
         }
 
-        onUpload({ ...formValues });
+        const formData = new FormData();
+        formData.append('title', formValues.title);
+        formData.append('description', formValues.description);
+
+        if (formValues.thumbnailFile) {
+            formData.append('image', formValues.thumbnailFile);
+        }
+
+        onUpload(formData);
     };
 
     const handleChange = (event) => {

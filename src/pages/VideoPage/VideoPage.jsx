@@ -7,8 +7,6 @@ import VideoList from "../../components/VideoList/VideoList";
 import CommentSection from "../../components/CommentSection/CommentSection";
 import api from '../../usecase';
 
-
-
 export default function VideoPage() {
     const { id: videoIdParam } = useParams();
     const [sideVideos, setSideVideos] = useState([]);
@@ -46,7 +44,11 @@ export default function VideoPage() {
         api.get(`/videos/${videoId}`)
             .then(response => {
                 if (response.status === 200) {
-                    setCurrentVideo(response.data);
+                    const videoWithApiKey = {
+                        ...response.data,
+                        video: `${response.data.video}?api_key=1b06fab0-9e2f-461b-a0a6-23fee89cd50c`
+                    };
+                    setCurrentVideo(videoWithApiKey);
                 } else {
                     setError("This video isn't available");
                 }
